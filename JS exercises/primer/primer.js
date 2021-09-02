@@ -2,11 +2,7 @@ var favoriteBooks = [];
 var toReadBooks = [];
 
 function addFavoriteBook(bookName) {
- if(!bookName.includes("Great")) {
-   favoriteBooks.push(bookName)
- } else {
-   toReadBooks.push(bookName)
- }
+  !bookName.includes("Great") ? favoriteBooks.push(bookName) : toReadBooks.push(bookName)
 }
 
 function printFavoriteBooks() {
