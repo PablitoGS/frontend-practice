@@ -9,7 +9,7 @@
 3. Darle al jugador una forma de adivinar cuál es el número.
 4. Una vez que se ha introducido en número, registrarlo en alguna parte para que el jugador pueda ver sus intentos previos.
 5. A continuación, comprobar si el número es correcto.
-6. i es correcto:
+6. si es correcto:
   - Mostrar un mensaje de felicitaciones.
   - Hacer que el jugador no pueda introducir más intentos (esto arruinaría el juego).
   - Mostrar un control que permita al jugador volver a empezar el juego.
