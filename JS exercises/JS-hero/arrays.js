@@ -6,3 +6,12 @@ var toArray = (a, b) => {
 }
 
 console.log(toArray('a', 'b'))
+
+
+var toArray = (...values) => {
+  let myArray = [];
+  myArray.push(...values);
+  return myArray
+}
+
+console.log(toArray('a', 'b', 'c'))
