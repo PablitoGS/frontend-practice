@@ -7,6 +7,7 @@ var toArray = (a, b) => {
 
 console.log(toArray('a', 'b'))
 
+//..//
 
 var toArray = (...values) => {
   let myArray = [];
@@ -15,3 +16,20 @@ var toArray = (...values) => {
 }
 
 console.log(toArray('a', 'b', 'c'))
+
+
+//Write a function getFirstElement that takes an array and returns the first element of the array.
+
+function getFirstElement(array) {
+return array[0]
+}
+
+//..//
+
+let getFirst = (array) => {
+	return array[0]
+}
+
+const someArray = [24,10,9,2,3,5];
+
+console.log(getFirst(someArray))
