@@ -12,5 +12,22 @@ function maxSequence(arr) {
     }
     return console.log(sumado)
 }
+
+function OtherMaxSequence(arr) {
+    let suma = 0;
+    let number = 0;
   
-maxSequence(myArray)
+    arr.forEach(function (i) {
+      number = number + i; 
+      suma = Math.max(suma, number);
+      if (number < 0) {
+        number= 0; 
+      }
+    });
+  
+    return suma;
+  }
+  
+  
+maxSequence(myArray);
+OtherMaxSequence(myArray);
