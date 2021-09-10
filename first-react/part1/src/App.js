@@ -1,22 +1,11 @@
 import './App.css';
-
-const Mensaje = () => {
-  const heading = 'Hola mundo'
-  const text = 'Hoy es '
-
-  return (
-    <>
-    <h1>{heading}</h1>
-    <p>{text + new Date()}</p>
-    </>
-  )
-}
+import Message from './Message';
 
 function App() {
 
   return (
     <div className="App">
-      <Mensaje />
+      <Message />
     </div>
   );
 }
