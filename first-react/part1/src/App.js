@@ -1,8 +1,23 @@
 import './App.css';
 
-function App() {
+const Mensaje = () => {
+  const heading = 'Hola mundo'
+  const text = 'Hoy es '
+
   return (
-    <div className="App">Hola mundo</div>
+    <>
+    <h1>{heading}</h1>
+    <p>{text + new Date()}</p>
+    </>
+  )
+}
+
+function App() {
+
+  return (
+    <div className="App">
+      <Mensaje />
+    </div>
   );
 }
 
