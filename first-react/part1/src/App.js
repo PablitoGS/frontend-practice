@@ -11,7 +11,7 @@ function App() {
       <Heading text="Hola mundo" />
       <p>{title + date}</p>
       <Message text="Una linea de texto por aquí" />
-      <Message text="Otra linea de textopor acá" />
+      <Message color="green" text="Otra linea de texto por acá de color con style" />
     </div>
   );
 }

@@ -1,7 +1,9 @@
 
 const Message = (props) => {
     return (
-      <p>{props.text}</p>
+    <p style={{color: props.color}}>
+        {props.text}
+    </p>
     )
   }
 
