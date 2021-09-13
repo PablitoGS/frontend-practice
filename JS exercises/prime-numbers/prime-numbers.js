@@ -1,21 +1,14 @@
-function primeTester (n) {
-  let number = n;
-
+function primeTester(n) {
   if(n < 2 ) {
     return false;
   }
-
-  while(n > 2) {
-    n--;
-    if(number % n == 0) {
+  
+  for(let i = 2; i < n; i++) {
+    if(n % i == 0) {
       return false;
     }
-	}
+  }
   return true
 }
 
-
-//// TODO: 
-function primeList (start, end) {
-
-}
+console.log(primeTester(37))
