@@ -5,8 +5,7 @@
 
 const theMatrix = (width, height) => {
  	let numbers;
-    let row = [];
-    let arr = [];
+  let row = [];
 
 	for(let i = 0; i< height; i++) {
 
