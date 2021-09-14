@@ -10,7 +10,7 @@ const theMatrix = (width, height) => {
 
 	for(let i = 0; i< height; i++) {
 
-      	for(let j = 0; j<width; j++) {a
+      	for(let j = 0; j<width; j++) {
          numbers =  Math.round(Math.random()*10)
           row[j] = numbers
         }
