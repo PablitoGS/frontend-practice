@@ -1,24 +1,31 @@
-const multi = (width, height) => {
-  let table = [];
+const init = (size) => {
+  let arr = new Array(size)
+  
+  for (let i= 0; i< arr.length; i++) {
+    arr[i] = new Array(size);
+  }
+  return arr;
+}
 
-  for(let i = 0; i< height; i++) {
-    table[i] = []
-
-    for(let j = 0; j< height; j++) {
-      table[i][j] = i
-
-      if(i>0) {
-        table[0][j] = j
-      }
-      if(j>0) {
-        table[i][j] = i*j
-      }
+const multi = (size) => {
+  let table = init(size);
+  
+  table[0][0] = 0;
+  
+  for(let i = 1; i< size; i++) {
+    table[0][i] = i;  
+    table[i][0] = i;      
+  }
+  
+  for(let i = 1; i< size; i++) {
+    for(let j = 1; j< size; j++) {
+      table[i][j] = i*j;
     }
   }
-
+  
   for(let numbers in table) {
     console.log(table[numbers])
   }
 }
 
-multi(10,10)
+multi(10)
