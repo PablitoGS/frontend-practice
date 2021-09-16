@@ -3,18 +3,23 @@ import ReactDOM from 'react-dom'
 import Heading from './Heading'
 import Content, {Part} from './Content'
 import Total from './Total'
+import Avatar from './Avatar'
 
 const App = () => {
   const textCourse = 'Half Stack application development'
   const part1 = 'Fundamentals of React'
   const exercises1 = 10
   const part2 = 'Using props to pass data'
-  const exercises2 = 7
+  const exercises2 =7
   const part3 = 'State of a component'
   const exercises3 = 14
+  const user = 'Pablo'
+  const srcImage= 'https://randomuser.me/api/portraits/men/72.jpg'
+
 
   return (
     <>
+      <Avatar src={srcImage} userName={user}/>
       <Heading text={textCourse}/>
       <Content>
         <Part text={part1} exercises={exercises1}/>
