@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import './index.css';
 import Heading from './Heading'
 import Content, {Part} from './Content'
 import Total from './Total'
