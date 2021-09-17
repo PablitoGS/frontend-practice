@@ -14,12 +14,12 @@ const App = () => {
   const part3 = 'State of a component'
   const exercises3 = 14
   const user = 'Pablo'
-  const srcImage= 'https://randomuser.me/api/portraits/men/72.jpg'
+  const id = 72
 
 
   return (
     <>
-      <Avatar src={srcImage} userName={user}/>
+      <Avatar id={id} userName={user}/>
       <Heading text={textCourse}/>
       <Content>
         <Part text={part1} exercises={exercises1}/>
