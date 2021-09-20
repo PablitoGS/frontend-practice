@@ -2,18 +2,30 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css';
 import Heading from './Heading'
-import Content, {Part} from './Content'
+import Content from './Content'
+import ContentCopy from './ContentCopy'
 import Total from './Total'
 import Avatar from './Avatar'
 
 const App = () => {
+
   const textCourse = 'Half Stack application development'
-  const part1 = 'Fundamentals of React'
-  const exercises1 = 10
-  const part2 = 'Using props to pass data'
-  const exercises2 =7
-  const part3 = 'State of a component'
-  const exercises3 = 14
+  const parts = [
+    {
+      name: 'Fundamentals of React',
+      exercises: 10
+    },
+    {
+      name: 'Using props to pass data',
+      exercises: 7
+    },
+    {
+      name: 'State of a component',
+      exercises: 14
+    }
+  ]
+
+
   const user = 'Pablo'
   const id = 72
 
@@ -23,11 +35,14 @@ const App = () => {
       <Avatar id={id} userName={user}/>
       <Heading text={textCourse}/>
       <Content>
-        <Part text={part1} exercises={exercises1}/>
-        <Part text={part2} exercises={exercises2}/>
-        <Part text={part3} exercises={exercises3}/>
+        <Content.Part text={parts[0].name} exercises={parts[0].exercises}/>
+        <Content.Part text={parts[1].name} exercises={parts[1].exercises}/>
+        <Content.Part text={parts[2].name} exercises={parts[2].exercises}/>
       </Content>
-      <Total totalExercises={exercises1 + exercises2 + exercises3} />
+      <Total arrSum={parts} />
+      <hr/>
+      <ContentCopy arr={parts}/>
+
     </>
   )
 }
