@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +12,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+  /* Avatar */
+
+  .course-avatar img {
+    border-radius: 50%;
+    box-shadow: 0 2px 3px grey;
+  }
+  .course-avatar img:hover {
+    cursor: pointer;
+  }
+  .course-avatar img.disabled {
+    opacity: 0.5;
+  }
