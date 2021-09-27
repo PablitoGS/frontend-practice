@@ -1,5 +1,5 @@
 
-class lyrics {
+class Lyrics {
     execute({author, song}) {
       const url = `https://api.lyrics.ovh/v1/${author}/${song}`;
       return fetch(url)
@@ -8,7 +8,7 @@ class lyrics {
     }
   }
   
-  let lyricsRepository = new lyrics()
+  let lyricsRepository = new Lyrics()
   
   lyricsRepository.execute(
     {   
