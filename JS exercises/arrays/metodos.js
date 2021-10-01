@@ -25,3 +25,24 @@ function filterRange(arr, a, b) {
 }
 
 console.log(filterRange(arr,1,3))
+
+
+//
+// Escribe una función filterRangeInPlace(arr, a, b) que obtenga un array arr y
+// remueva del mismo todos los valores excepto aquellos que se encuentran entre a y b.
+// El test es: a ≤ arr[i] ≤ b.
+//
+// La función solo debe modificar el array. No debe devolver nada.
+
+let arr = [5,3,8,1]
+
+function filterRangeInPlace(arr, a, b) {
+ 	arr.forEach((item, i) =>  {
+      if (item < a || item >b) {
+        arr.splice(i, 1)
+      };
+    })
+}
+
+filterRangeInPlace(arr,1,5)
+console.log(arr)
