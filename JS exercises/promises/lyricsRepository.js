@@ -1,23 +1,25 @@
+function loadJson(url) {
+  return fetch(url)
+    .then((response) => response.json())
+    .catch((err) => console.error("The song was not found"));
+}
 
 class Lyrics {
-    execute({author, song}) {
-      const url = `https://api.lyrics.ovh/v1/${author}/${song}`;
-      return fetch(url)
-        .then((response) => response.json())
-        .catch((err) => console.error("The song was not found"));
-    }
+  execute({ author, song }) {
+    const url = `https://api.lyrics.ovh/v1/${author}/${song}`;
+    return loadJson(url);
   }
-  
-  let lyricsRepository = new Lyrics()
-  
-  lyricsRepository.execute(
-    {   
-        author: "kiss", 
-        song: "strutter"}
-    )
-  
+}
+
+let lyricsRepository = new Lyrics();
+
+lyricsRepository
+  .execute({
+    author: "kiss",
+    song: "deuce"
+  })
+
   .then((data) => {
-    document.getElementById("app").innerHTML = `${data.lyrics}`;
+    console.log(data.lyrics);
   })
   .catch((err) => console.error("La canción no existe"));
-  
