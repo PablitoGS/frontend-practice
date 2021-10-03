@@ -1,7 +1,11 @@
-function loadJson(url) {
-  return fetch(url)
-    .then((response) => response.json())
-    .catch((err) => console.error("The song was not found"));
+async function loadJson(url) {
+  try {
+    let response = await fetch(url);
+    let data = response.json();
+    return data;
+  } catch {
+    throw new Error();
+  }
 }
 
 class Lyrics {
