@@ -7,7 +7,7 @@ let salaries = {
   "Mary": 150
 };
 
-
+  
 function topSalary(obj) {
   let maxSalary = 0
   let maxSalaryName = null
