@@ -16,7 +16,7 @@ function App() {
     <section className="App-content">
       {thumbnails.map(( item, key ) => {
         return <div key={key}>
-          <img src={item.thumbnailUrl} alt='' />
+          <img src={item.thumbnailUrl} alt={item.title} />
           <p>{item.title}</p>
         </div>
       })}
