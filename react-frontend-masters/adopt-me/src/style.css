@@ -11,6 +11,8 @@ body {
 }
 
 .search-params {
+  display: flex;
+  align-items: flex-start;
   width: 1100px;
   margin: 0 auto;
 }
