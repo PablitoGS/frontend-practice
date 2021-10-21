@@ -8,10 +8,10 @@ import { useState } from "react";
 
 import "./App.css";
 
-function App() {
-  const [search, updateValue] = useState("");
+function App({ initialValue }) {
+  const [search, updateValue] = useState(initialValue);
   const [input, updateInput] = useState("");
-  const [gifs, alt] = useGifList({ search });
+  const [gifs] = useGifList({ search });
 
   return (
     <div className="App">
@@ -33,11 +33,14 @@ function App() {
               }}
             />
           </div>
-          <GifList gifs={gifs} alt={alt} />
+          <GifList gifs={gifs} />
         </div>
       </section>
     </div>
   );
 }
+App.defaultProps = {
+  initialValue: "Javascript",
+};
 
 export default App;

@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 const useGifList = ({ search }) => {
   const [gifs, updateGifs] = useState([]);
-  const [alt, updateAlt] = useState([]);
 
   useEffect(
     function () {
@@ -14,16 +13,16 @@ const useGifList = ({ search }) => {
         );
         const json = await res.json();
         const data = await json.data;
-        const url = data.map((value) => value.images.downsized.url);
-        const title = await data.map((value) => value.title);
-
-        updateGifs(url);
-        updateAlt(title);
+        const gif = data.map((value) => ({
+          url: value.images.downsized.url,
+          title: value.title,
+        }));
+        updateGifs(gif);
       }
     },
     [search]
   );
-  return [gifs, alt];
+  return [gifs];
 };
 
 useGifList.defaultProps = {
