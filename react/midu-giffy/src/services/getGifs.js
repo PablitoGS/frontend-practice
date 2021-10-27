@@ -1,4 +1,4 @@
-export default function getGifs({ search = "morty" } = {}) {
+export default function getGifs({ search }) {
   const URL = `https://api.giphy.com/v1/gifs/search?api_key=Qcfkd8glFPZuGsVzzDXNVvKCKylzxtWf&limit=10&q=${search}`;
 
   async function requestGifs() {
@@ -8,14 +8,11 @@ export default function getGifs({ search = "morty" } = {}) {
 
     const imgs = data.map((gif) => {
       const { url } = gif.images.downsized_medium;
-      const { title } = gif;
-      return { url, title };
+      const { title, id } = gif;
+      return { url, title, id };
     });
     return imgs;
   }
+
   return requestGifs();
 }
-
-getGifs.defaultProps = {
-  search: "dogs",
-};

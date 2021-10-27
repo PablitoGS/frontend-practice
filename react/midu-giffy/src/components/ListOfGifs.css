@@ -1,0 +1,7 @@
+.listGifs {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 80%;
+  overflow-x: auto;
+  border: 1px solid gray;
+}
