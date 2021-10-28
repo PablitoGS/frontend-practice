@@ -1,6 +1,5 @@
 import { Link, useLocation } from "wouter";
 import { useState } from "react";
-import ListOfGists from "../../components/LIstOfGifs";
 
 const POP_GIFS = ["Rock", "Hell", "ACDC"];
 
@@ -23,7 +22,6 @@ export default function Home() {
         />
         <button onClick={updateGifs}>BUSCAR</button>
       </div>
-      <ListOfGists />
       <h2>Los gifs más populares</h2>
       <div>
         {POP_GIFS.map((gif, key) => (

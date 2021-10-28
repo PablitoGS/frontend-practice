@@ -1,11 +1,7 @@
 import Gif from "./Gifs";
-import UseGifs from "../hooks/UseGifs";
 import "./ListOfGifs.css";
 
-const ListOfGists = ({ search }) => {
-  const { loading, gifs } = UseGifs({ search });
-  if (loading) return <i>Cargando...</i>;
-
+const ListOfGifs = ({ gifs }) => {
   return (
     <div className="listGifs">
       {gifs.map((gif) => (
@@ -16,8 +12,4 @@ const ListOfGists = ({ search }) => {
   );
 };
 
-export default ListOfGists;
-
-ListOfGists.defaultProps = {
-  search: "cats",
-};
+export default ListOfGifs;
