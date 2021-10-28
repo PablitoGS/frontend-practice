@@ -22,3 +22,8 @@
   flex: 1;
   height: 30px;
 }
+a,
+a:hover,
+a:visited {
+  color: white;
+}

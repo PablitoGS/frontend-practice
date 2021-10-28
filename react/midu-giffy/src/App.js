@@ -1,30 +1,23 @@
 import ListOfGifs from "./components/LIstOfGifs";
-import { useState } from "react";
+
+import { Route } from "wouter";
+import Home from "./pages/Home";
+
 import "./App.css";
 
-function App({ initialValue }) {
-  const [input, setInput] = useState("");
-  const [keyword, setKeyword] = useState(initialValue);
+function App() {
   return (
     <div className="App">
       <section className="App-section">
-        <div className="search">
-          <input
-            type="text"
-            value={input}
-            placeholder="... busca un gif"
-            onChange={(e) => setInput(e.target.value)}
-          />
-          <button onClick={() => setKeyword(input)}>BUSCAR</button>
-        </div>
-        <ListOfGifs search={keyword} />
+        <Route path="/search/:keyword">
+          {(params) => <ListOfGifs search={params.keyword} />}
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
       </section>
     </div>
   );
 }
-
-App.defaultProps = {
-  initialValue: "dogs",
-};
 
 export default App;

@@ -4,7 +4,6 @@ import "./ListOfGifs.css";
 
 const ListOfGists = ({ search }) => {
   const { loading, gifs } = UseGifs({ search });
-
   if (loading) return <i>Cargando...</i>;
 
   return (
@@ -18,3 +17,7 @@ const ListOfGists = ({ search }) => {
 };
 
 export default ListOfGists;
+
+ListOfGists.defaultProps = {
+  search: "cats",
+};

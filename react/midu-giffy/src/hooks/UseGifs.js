@@ -10,6 +10,7 @@ export default function UseGifs({ search }) {
     setLoading(true);
 
     getGifs({ search }).then((gifs) => {
+      //gifs es la response de UseGifs, array con url, id, title, etc
       setGifs(gifs);
       setLoading(false);
     });
