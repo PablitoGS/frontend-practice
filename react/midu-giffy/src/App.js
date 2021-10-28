@@ -1,6 +1,5 @@
 import ListOfGifs from "./components/LIstOfGifs";
 import { useState } from "react";
-
 import "./App.css";
 
 function App({ initialValue }) {
@@ -9,13 +8,15 @@ function App({ initialValue }) {
   return (
     <div className="App">
       <section className="App-section">
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-        />
-        <button onClick={() => setKeyword(input)}>BUSCAR</button>
-
+        <div className="search">
+          <input
+            type="text"
+            value={input}
+            placeholder="... busca un gif"
+            onChange={(e) => setInput(e.target.value)}
+          />
+          <button onClick={() => setKeyword(input)}>BUSCAR</button>
+        </div>
         <ListOfGifs search={keyword} />
       </section>
     </div>

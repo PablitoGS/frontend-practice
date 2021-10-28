@@ -1,21 +1,9 @@
-import { useState, useEffect } from "react";
-import getGifs from "../services/getGifs";
 import Gif from "./Gifs";
+import UseGifs from "../hooks/UseGifs";
 import "./ListOfGifs.css";
 
 const ListOfGists = ({ search }) => {
-  const [loading, setLoading] = useState(false);
-  const [gifs, setGifs] = useState([]);
-
-  useEffect(() => {
-    setLoading(true);
-    myGifs();
-    async function myGifs() {
-      const gifs = await getGifs({ search });
-      setGifs(gifs);
-      setLoading(false);
-    }
-  }, [search]);
+  const { loading, gifs } = UseGifs({ search });
 
   if (loading) return <i>Cargando...</i>;
 
