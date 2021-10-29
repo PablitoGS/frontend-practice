@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import GifContext from "../context/GifContext";
 
 import getGifs from "../services/getGifs";
 
 export default function UseGifs({ search }) {
   const [loading, setLoading] = useState(false);
-  const [gifs, setGifs] = useState([]);
+
+  const { gifs, setGifs } = useContext(GifContext);
 
   useEffect(() => {
     setLoading(true);
@@ -14,14 +16,7 @@ export default function UseGifs({ search }) {
       setGifs(gifs);
       setLoading(false);
     });
-
-    // myGifs();
-    // async function myGifs() {
-    //   const gifs = await getGifs({ search });
-    //   setGifs(gifs);
-    //   setLoading(false);
-    // }
-  }, [search]);
+  }, [search, setGifs]);
 
   return { loading, gifs };
 }

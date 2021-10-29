@@ -5,7 +5,7 @@ const ListOfGifs = ({ gifs }) => {
   return (
     <div className="listGifs">
       {gifs.map((gif) => (
-        <Gif key={gif.id} url={gif.url} title={gif.title} />
+        <Gif id={gif.id} key={gif.id} url={gif.url} title={gif.title} />
         //<Gif key={gif.id} {...gif} />
       ))}
     </div>

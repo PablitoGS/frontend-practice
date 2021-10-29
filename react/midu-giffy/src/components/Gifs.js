@@ -1,10 +1,13 @@
 import "./Gif.css";
+import { Link } from "wouter";
 
-const Gif = ({ title, url }) => {
+const Gif = ({ title, url, id }) => {
   return (
     <div className="gif">
-      <h4>{title}</h4>
-      <img src={url} alt="" />
+      <Link to={`/gif/${id}`}>
+        <h4>{title}</h4>
+        <img src={url} alt={title} />
+      </Link>
     </div>
   );
 };

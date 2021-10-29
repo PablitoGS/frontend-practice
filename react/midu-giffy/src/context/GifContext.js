@@ -1,9 +1,8 @@
-import React from "react";
-import { useState } from "react/cjs/react.development";
+import React, { useState } from "react";
 
 const Context = React.createContext({});
 
-export function GifsContentProvider({ children }) {
+export function GifsContextProvider({ children }) {
   const [gifs, setGifs] = useState([]);
 
   return (
