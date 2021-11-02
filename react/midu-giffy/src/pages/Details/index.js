@@ -6,6 +6,7 @@ export default function Details({ params }) {
   const singleGif = gifs.find((gif) => gif.id === params.id);
   return (
     <>
+      <h3>{singleGif.title}</h3>
       <Gif {...singleGif} />
     </>
   );

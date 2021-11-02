@@ -1,5 +1,6 @@
-import { Link, useLocation } from "wouter";
+import { useLocation } from "wouter";
 import { useState } from "react";
+import Category from "../../components/Category";
 
 const POP_GIFS = ["Rock", "Hell", "ACDC"];
 
@@ -22,14 +23,7 @@ export default function Home() {
         />
         <button onClick={updateGifs}>BUSCAR</button>
       </div>
-      <h2>Los gifs más populares</h2>
-      <div>
-        {POP_GIFS.map((gif, key) => (
-          <div key={key}>
-            <Link to={`/search/${gif}`}>Gifs de {gif}</Link>
-          </div>
-        ))}
-      </div>
+      <Category options={POP_GIFS} title="Mis Gifs favoritos" />
     </>
   );
 }

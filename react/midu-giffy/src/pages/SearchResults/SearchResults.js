@@ -7,7 +7,12 @@ const SearchResults = ({ params }) => {
 
   if (loading) return <i>Cargando...</i>;
 
-  return <ListOfGifs gifs={gifs} />;
+  return (
+    <>
+      <h2>{search}</h2>
+      <ListOfGifs gifs={gifs} />
+    </>
+  );
 };
 
 export default SearchResults;
