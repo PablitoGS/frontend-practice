@@ -1,0 +1,10 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.highscore {
+  text-align: right;
+  font-family: monospace;
+  font-size: 1.2rem;
+}
