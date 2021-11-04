@@ -12,10 +12,13 @@ export default function App() {
   useEffect(() => {
     if (user) {
       getQuotes(user).then((res) => {
-        const quote = res.map(({ quote }) => {
-          return quote;
-        });
-        setQuoteList(quote);
+        console.log(res);
+        if (res.length) {
+          const quote = res.map(({ quote }) => {
+            return quote;
+          });
+          setQuoteList(quote);
+        }
       });
     }
   }, [user]);
