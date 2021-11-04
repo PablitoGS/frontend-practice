@@ -1,14 +1,12 @@
 import "./App.css";
 import Login from "./Login";
 import { useContext, useState } from "react";
-import useQuotes from "./useQuotes";
 import QuoteList from "./QuoteList";
 import Context from "./Context";
 
 export default function App() {
   const { user, setUser } = useContext(Context);
   const [input, setInput] = useState("");
-  const [quoteList] = useQuotes(user);
 
   return (
     <div className="App">
@@ -23,7 +21,7 @@ export default function App() {
           <h1>Hola {user}</h1>
           <div className="list">
             <h2 className="title">Quotes:</h2>
-            <QuoteList quotes={quoteList} />
+            <QuoteList />
           </div>
         </>
       )}

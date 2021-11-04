@@ -1,20 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import Context from "./Context";
 import getQuotes from "./getQuotes";
 
-export default function useQuotes(user) {
+export default function useQuotes() {
   const [quoteList, setQuoteList] = useState([]);
+  const { user } = useContext(Context);
 
   useEffect(() => {
-    if (user) {
-      getQuotes(user).then((res) => {
-        if (res.length) {
-          const quote = res.map(({ quote }) => {
-            return quote;
-          });
-          setQuoteList(quote);
-        }
+    getQuotes(user).then((res) => {
+      const quote = res.map(({ quote }) => {
+        return quote;
       });
-    }
+      setQuoteList(quote);
+    });
   }, [user]);
 
   return [quoteList];
