@@ -1,0 +1,22 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.qList {
+  list-style-type: decimal;
+  list-style-position: inside;
+  text-align: left;
+  padding: 0;
+}
+.qList li {
+  margin-bottom: 20px;
+}
+.title {
+  text-align: left;
+}
+
+.list {
+  max-width: 80%;
+  margin: 0 auto;
+}
