@@ -3,11 +3,11 @@ import { createContext, useState } from "react";
 const Context = createContext();
 
 export function ContextProvider({ children }) {
-  const [highscore, setHighscore] = useState({ name: "Javi", score: 2 });
+  const [highscore, setHighscore] = useState({ score: 0 });
 
-  function checkScore(name, score) {
+  function checkScore(score) {
     if (score > highscore.score) {
-      setHighscore({ name, score });
+      setHighscore({ score });
     }
   }
   return (

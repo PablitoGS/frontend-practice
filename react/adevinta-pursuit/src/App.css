@@ -4,7 +4,37 @@
 }
 
 .highscore {
-  text-align: right;
+  padding: 20px;
+  background-color: lavender;
+  text-align: center;
   font-family: monospace;
   font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+.list {
+  list-style-type: none;
+  text-align: left;
+  width: 60%;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
+  padding: 0;
+}
+.list input {
+  display: none;
+}
+.list li {
+  padding: 0;
+  margin: 0;
+}
+
+.list label {
+  cursor: pointer;
+  background-color: white;
+  display: block;
+  padding: 15px 20px;
+}
+.list label:hover {
+  transition: background-color 2s ease-out;
+  background-color: gold;
 }
