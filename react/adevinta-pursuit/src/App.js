@@ -1,6 +1,7 @@
 import "./App.css";
 import getQuestion from "./getQuestion";
-import { useEffect, useState } from "react";
+import Context from "./Context";
+import { useEffect, useState, useContext } from "react";
 import Question from "./components/Question";
 import GameOver from "./components/GameOver";
 
@@ -8,6 +9,8 @@ export default function App() {
   const [score, setScore] = useState(0);
   const [questionDto, setQuestionDto] = useState({});
   const [isGameOver, setIsGameOver] = useState(false);
+  const { highscore } = useContext(Context);
+  const { checkScore } = useContext(Context);
 
   useEffect(() => {
     getQuestion().then((data) => {
@@ -20,13 +23,19 @@ export default function App() {
   }
 
   function onIncorrectAnswer() {
-    setScore(0);
     setIsGameOver(true);
+  }
+
+  function initGame() {
+    setIsGameOver(false);
+    checkScore(score);
+    setScore(0);
   }
 
   return (
     <div className="App">
-      <div className="highscore">Highscore: {score}</div>
+      <div className="highscore">Highscore: {highscore.score}</div>
+      <div className="score">Your score: {score}</div>
       {!isGameOver ? (
         <Question
           questionDto={questionDto}
@@ -34,7 +43,7 @@ export default function App() {
           onIncorrectAnswer={onIncorrectAnswer}
         />
       ) : (
-        <GameOver />
+        <GameOver initGame={initGame} />
       )}
     </div>
   );

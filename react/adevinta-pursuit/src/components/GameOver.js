@@ -1,9 +1,12 @@
-const GameOver = () => {
-  return <h2>GAME OVER</h2>;
+const GameOver = ({ initGame }) => {
+  return (
+    <>
+      <h2>GAME OVER</h2>
+      <button onClick={initGame} className="button">
+        Play again
+      </button>
+    </>
+  );
 };
 
 export default GameOver;
-
-//button juega de nuevo, para reiniciar partida
-
-// highscore y your score

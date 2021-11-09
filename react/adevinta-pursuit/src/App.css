@@ -4,13 +4,21 @@
 }
 
 .highscore {
-  padding: 20px;
+  padding: 10px;
+  background-color: lavender;
+  text-align: center;
+  font-family: monospace;
+  font-size: 1.2rem;
+}
+.score {
+  padding: 10px;
   background-color: lavender;
   text-align: center;
   font-family: monospace;
   font-size: 1.2rem;
   margin-bottom: 30px;
 }
+
 .list {
   list-style-type: none;
   text-align: left;
@@ -37,4 +45,10 @@
 .list label:hover {
   transition: background-color 2s ease-out;
   background-color: gold;
+}
+.button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  box-shadow: lightslategray;
+  cursor: pointer;
 }
