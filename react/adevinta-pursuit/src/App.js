@@ -9,12 +9,14 @@ export default function App() {
   const [score, setScore] = useState(0);
   const [questionDto, setQuestionDto] = useState({});
   const [isGameOver, setIsGameOver] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const { highscore } = useContext(Context);
   const { checkScore } = useContext(Context);
 
   useEffect(() => {
     getQuestion().then((data) => {
       setQuestionDto(data);
+      setIsLoading(false);
     });
   }, [score]);
 
@@ -29,6 +31,7 @@ export default function App() {
   function initGame() {
     setIsGameOver(false);
     checkScore(score);
+    setIsLoading(true);
     setScore(0);
   }
 
@@ -41,6 +44,7 @@ export default function App() {
           questionDto={questionDto}
           onCorrectAnswer={onCorrectAnswer}
           onIncorrectAnswer={onIncorrectAnswer}
+          isLoading={isLoading}
         />
       ) : (
         <GameOver initGame={initGame} />
